@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# React Todo List 專案
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+這是一個使用 React 開發的待辦事項清單應用程式，提供了基本的待辦事項管理功能。
 
-## Available Scripts
+## 功能特色
 
-In the project directory, you can run:
+- ✏️ 新增待辦事項
+- ✅ 標記完成/未完成狀態
+- 🗑️ 刪除待辦事項
+- 📝 編輯待辦事項內容
 
-### `npm start`
+## 專案結構
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+src/
+├── components/
+│   ├── Todo.js            # 單一待辦事項組件
+│   ├── TodoForm.js        # 新增待辦事項表單
+│   ├── EditTodoForm.js    # 編輯待辦事項表單
+│   └── TodoWrapper.js     # 待辦事項列表容器
+├── App.js                 # 應用程式主組件
+└── index.js              # 應用程式入口點
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 主要組件說明
 
-### `npm test`
+### TodoWrapper
+- 管理待辦事項的狀態
+- 處理新增、刪除、編輯和完成狀態切換等操作
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### TodoForm
+- 提供新增待辦事項的表單介面
+- 處理表單提交和輸入值的狀態管理
 
-### `npm run build`
+### Todo
+- 顯示單一待辦事項
+- 提供完成狀態切換和刪除功能的按鈕
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### EditTodoForm
+- 提供編輯待辦事項的表單介面
+- 處理編輯狀態的切換和更新
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 使用技術
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React.js
+- JavaScript (ES6+)
+- CSS
+- Font Awesome（圖示）
 
-### `npm run eject`
+## 如何開始
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. 複製專案到本地：
+   ```bash
+   git clone [your-repository-url]
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. 安裝相依套件：
+   ```bash
+   npm install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. 啟動開發伺服器：
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. 開啟瀏覽器並訪問：
+   ```
+   http://localhost:3000
+   ```
 
-## Learn More
+## 學習重點
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+此專案展示了以下 React 概念的實際應用：
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 組件之間的資料傳遞（Props）
+- 狀態管理（useState Hook）
+- 事件處理
+- 條件渲染
+- 列表渲染
+- 表單處理
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
