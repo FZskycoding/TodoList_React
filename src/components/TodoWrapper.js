@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { TodoForm } from "./TodoForm";
 import { v4 as uuidv4 } from "uuid";
 import { Todo } from "./Todo";
-import { EditTodoForm } from "./EditTodoForm";
+import { SaveTaskForm } from "./SaveTaskForm";
 uuidv4();
 
 export const TodoWrapper = () => {
@@ -50,7 +50,7 @@ export const TodoWrapper = () => {
       <TodoForm addTodo={addTodo} />
       {todos.map((todo, index) =>
         todo.isEditing ? (
-          <EditTodoForm editTodo={saveNewTask} newTask={todo} />
+          <SaveTaskForm editTodo={saveNewTask} newTask={todo} />
         ) : (
           <Todo
             task={todo}

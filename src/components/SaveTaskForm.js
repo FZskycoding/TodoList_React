@@ -1,7 +1,7 @@
 //處理todo編輯的部分
 import React, { useState } from "react";
 
-export const EditTodoForm = ({ editTodo, newTask }) => {
+export const SaveTaskForm = ({ editTodo, newTask }) => {
   const [value, setValue] = useState(newTask.task);
 
   //當add按鈕按下:
