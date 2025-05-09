@@ -12,7 +12,7 @@ export const TodoWrapper = () => {
   const addTodo = (todo) => {
     setTodos([
       ...todos,
-      { id: uuidv4(), task: todo, completed: false, isEditing: false },
+      { id: uuidv4(), taskName: todo, completed: false, isEditing: false },
     ]);
   };
 
@@ -36,10 +36,12 @@ export const TodoWrapper = () => {
     );
   };
 
-  const saveNewTask = (task, id) => {
+  const saveNewTask = (taskName, id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? { ...todo, task, isEditing: !todo.isEditing } : todo
+        todo.id === id
+          ? { ...todo, taskName, isEditing: !todo.isEditing }
+          : todo
       )
     );
   };
@@ -48,12 +50,12 @@ export const TodoWrapper = () => {
     <div className="TodoWrapper">
       <h1>Get Things Done!</h1>
       <TodoForm addTodo={addTodo} />
-      {todos.map((todo, index) =>
+      {todos.map((todo) =>
         todo.isEditing ? (
-          <SaveTaskForm editTodo={saveNewTask} newTask={todo} />
+          <SaveTaskForm saveNewTask={saveNewTask} newTask={todo} />
         ) : (
           <Todo
-            task={todo}
+            eachTask={todo}
             key={todo.id}
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
