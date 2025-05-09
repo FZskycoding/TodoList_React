@@ -50,7 +50,7 @@ export const TodoWrapper = () => {
       <TodoForm addTodo={addTodo} />
       {todos.map((todo, index) =>
         todo.isEditing ? (
-          <SaveTaskForm editTodo={saveNewTask} newTask={todo} />
+          <SaveTaskForm saveNewTask={saveNewTask} newTask={todo} />
         ) : (
           <Todo
             task={todo}

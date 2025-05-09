@@ -1,13 +1,13 @@
 //處理todo編輯的部分
 import React, { useState } from "react";
 
-export const SaveTaskForm = ({ editTodo, newTask }) => {
+export const SaveTaskForm = ({ saveNewTask, newTask }) => {
   const [value, setValue] = useState(newTask.task);
 
   //當add按鈕按下:
   const handleSubmit = (e) => {
     e.preventDefault(); // 防止重整畫面
-    editTodo(value, newTask.id); //將內容傳給addTodo
+    saveNewTask(value, newTask.id); //將內容傳給editTodo
   };
 
   return (
