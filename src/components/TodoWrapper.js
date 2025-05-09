@@ -54,7 +54,7 @@ export const TodoWrapper = () => {
         ) : (
           <Todo
             task={todo}
-            key={index}
+            key={todo.id}
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
             editTodo={editTodo}

@@ -1,4 +1,4 @@
-//陳列出所有個task
+//陳列出所有task的格式
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
