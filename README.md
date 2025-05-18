@@ -1,83 +1,79 @@
-# React Todo List 專案
+# Todo List 全端應用
 
-這是一個使用 React 開發的待辦事項清單應用程式，提供了基本的待辦事項管理功能。
+使用 React 和 Go 構建的待辦事項清單應用程式。前端使用 React 進行開發，後端使用 Go 提供 RESTful API 服務。
 
-## 功能特色
+## 功能特點
 
-- ✏️ 新增待辦事項
-- ✅ 標記完成/未完成狀態
-- 🗑️ 刪除待辦事項
-- 📝 編輯待辦事項內容
+- 新增待辦事項
+- 編輯待辦事項
+- 刪除待辦事項
+- 標記完成/未完成
+- RESTful API
+- 跨域資源共享 (CORS) 支援
 
-## 專案結構
+## 技術棧
 
+### 前端
+- React
+- Axios（HTTP 請求）
+- CSS（樣式設計）
+
+### 後端
+- Go
+- net/http（HTTP 服務器）
+
+## 安裝和運行
+
+### 前端設置
+```bash
+# 進入前端目錄
+cd frontend
+
+# 安裝依賴
+npm install
+
+# 啟動開發服務器
+npm start
 ```
-src/
-├── components/
-│   ├── Todo.js            # 單一待辦事項組件
-│   ├── TodoForm.js        # 新增待辦事項表單
-│   ├── EditTodoForm.js    # 編輯待辦事項表單
-│   └── TodoWrapper.js     # 待辦事項列表容器
-├── App.js                 # 應用程式主組件
-└── index.js              # 應用程式入口點
+前端將在 http://localhost:3000 運行
+
+### 後端設置
+```bash
+# 進入後端目錄
+cd backend
+
+# 運行後端服務器
+go run main.go
+```
+後端 API 將在 http://localhost:8080 運行
+
+## API 文檔
+
+### 獲取所有待辦事項
+- 方法：GET
+- 端點：`/todos`
+- 響應：待辦事項陣列
+
+### 創建待辦事項
+- 方法：POST
+- 端點：`/todos`
+- 請求體：待辦事項對象
+```json
+{
+    "id": "string",
+    "taskName": "string",
+    "completed": false,
+    "isEditing": false
+}
 ```
 
-## 主要組件說明
+### 更新待辦事項
+- 方法：PUT
+- 端點：`/todos`
+- 請求體：更新的待辦事項對象
 
-### TodoWrapper
-- 管理待辦事項的狀態
-- 處理新增、刪除、編輯和完成狀態切換等操作
-
-### TodoForm
-- 提供新增待辦事項的表單介面
-- 處理表單提交和輸入值的狀態管理
-
-### Todo
-- 顯示單一待辦事項
-- 提供完成狀態切換和刪除功能的按鈕
-
-### EditTodoForm
-- 提供編輯待辦事項的表單介面
-- 處理編輯狀態的切換和更新
-
-## 使用技術
-
-- React.js
-- JavaScript (ES6+)
-- CSS
-- Font Awesome（圖示）
-
-## 如何開始
-
-1. 複製專案到本地：
-   ```bash
-   git clone [your-repository-url]
-   ```
-
-2. 安裝相依套件：
-   ```bash
-   npm install
-   ```
-
-3. 啟動開發伺服器：
-   ```bash
-   npm start
-   ```
-
-4. 開啟瀏覽器並訪問：
-   ```
-   http://localhost:3000
-   ```
-
-## 學習重點
-
-此專案展示了以下 React 概念的實際應用：
-
-- 組件之間的資料傳遞（Props）
-- 狀態管理（useState Hook）
-- 事件處理
-- 條件渲染
-- 列表渲染
-- 表單處理
-
+### 刪除待辦事項
+- 方法：DELETE
+- 端點：`/todos?id={id}`
+- 參數：待辦事項 ID
 
